@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from "../Header";
-import Sidebar from "../Sidebar";
+import Header from "../Header/index";
+import Sidebar from "../Sidebar/index";
 
 /**
  * Page Layout Description
@@ -9,12 +9,11 @@ const Layout: React.FC<any> = (props: { children: React.ReactNode }) => {
     return (
         <>
             <Header
-                className={'ib-header'}
                 logo={'/images/logo.svg'}
                 title={'Recoil Essential App'}
             />
-            <div className="content" style={{display: 'flex'}}>
-                <Sidebar/>
+            <Sidebar/>
+            <div className="content">
                 <div className="container-fluid">
                     {props.children}
                 </div>

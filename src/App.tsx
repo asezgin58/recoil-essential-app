@@ -1,17 +1,16 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import {Home} from "./pages";
-import Layout from "./components/Layout";
+import {BrowserRouter as Router, Switch} from 'react-router-dom';
+import {Home, User} from "./pages";
+import Route from './_route';
 
 const App: React.FC<any> = () => {
     return (
-        <Layout>
-            <Router>
-                <Switch>
-                    <Route exact path="/" component={Home}/>
-                </Switch>
-            </Router>
-        </Layout>
+        <Router>
+            <Switch>
+                <Route exact path="/" component={Home}/>
+                <Route path="/user" component={User}/>
+            </Switch>
+        </Router>
     );
 };
 

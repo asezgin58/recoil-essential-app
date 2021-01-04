@@ -15,10 +15,10 @@ const Header: React.FC<IHeaderProps> = ({
                                             children
                                         }) => {
 
-    const history: any = useHistory();
+    let history = useHistory();
     return (
         <>
-            <AppBar position={position || 'static'} className={`custom-header ${className || ''}`}>
+            <AppBar position={position || 'static'} className={`header ${className || ''}`}>
                 <Toolbar>
                     <div className="title-area">
                         {logo || miniLogo ? (
