@@ -1,17 +1,17 @@
 import React, {useState} from 'react';
 import {useRecoilState} from "recoil";
-import {userState} from "../../store/atoms/userAtom";
 import {Button, TextField} from "@material-ui/core";
 import {useHistory} from "react-router-dom";
 import {IUser} from "./type";
+import {userSelector} from "../../store/selectors/user";
 
 /**
  * Component File Description
  */
 const Edit: React.FC<any> = () => {
     const {push, goBack} = useHistory();
-    const [storeUser, setStoreUser] = useRecoilState(userState);
-    const [user, setUser] = useState<IUser>(storeUser);
+    const [userAtomValue, setUserAtomValue] = useRecoilState<IUser>(userSelector);
+    const [user, setUser] = useState<IUser>(userAtomValue);
 
     const handleChange = (e: any) => {
         setUser({
@@ -22,7 +22,7 @@ const Edit: React.FC<any> = () => {
 
     const handleSubmit = (e: any) => {
         e.preventDefault();
-        setStoreUser(user);
+        setUserAtomValue(user);
         push('/user');
     };
 

@@ -1,17 +1,16 @@
 import React from 'react';
-import {IUser} from "../User/type";
 import {useRecoilValue} from "recoil";
-import {userState} from "../../store/atoms/userAtom";
+import {userFullNameSelector} from "../../store/selectors/user";
 
 /**
  * Component File Description
  */
 const Home: React.FC<any> = () => {
-    const user: IUser = useRecoilValue(userState);
+    const userFullName: string = useRecoilValue<string>(userFullNameSelector);
 
     return (
         <>
-            <h1>Welcome, {user.name} {user.surname}</h1>
+            <h1>Welcome, {userFullName}</h1>
         </>
     );
 };

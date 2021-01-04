@@ -1,16 +1,16 @@
 import React from 'react';
 import {useRecoilValue} from "recoil";
-import {userState} from "../../store/atoms/userAtom";
 import {Button} from "@material-ui/core";
 import {useHistory} from "react-router-dom";
 import {IUser} from "./type";
+import {userSelector} from "../../store/selectors/user";
 
 /**
  * Component File Description
  */
 const Detail: React.FC<any> = () => {
     const {push} = useHistory();
-    const user: IUser = useRecoilValue(userState);
+    const user: IUser = useRecoilValue<IUser>(userSelector);
 
     return (
         <>
