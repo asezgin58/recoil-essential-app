@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Suspense} from 'react';
 import ReactDOM from 'react-dom';
 import './_assets/style/main.scss';
 import App from './App';
@@ -8,7 +8,9 @@ import {RecoilRoot} from 'recoil';
 ReactDOM.render(
     <React.StrictMode>
         <RecoilRoot>
-            <App/>
+            <Suspense fallback={""}>
+                <App/>
+            </Suspense>
         </RecoilRoot>
     </React.StrictMode>,
     document.getElementById('root')

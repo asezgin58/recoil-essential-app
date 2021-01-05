@@ -2,48 +2,48 @@ import React, {useState} from 'react';
 import {useRecoilState} from "recoil";
 import {Button, TextField} from "@material-ui/core";
 import {useHistory} from "react-router-dom";
-import {IUser} from "./type";
-import {userSelector} from "../../store/selectors/user";
+import {IAuthor} from "./type";
+import {authorSelector} from "../../store/selectors/author";
 
 /**
  * Component File Description
  */
 const Edit: React.FC<any> = () => {
     const {push, goBack} = useHistory();
-    const [userAtomValue, setUserAtomValue] = useRecoilState<IUser>(userSelector);
-    const [user, setUser] = useState<IUser>(userAtomValue);
+    const [authorAtomValue, setAuthorAtomValue] = useRecoilState<IAuthor>(authorSelector);
+    const [author, setAuthor] = useState<IAuthor>(authorAtomValue);
 
     const handleChange = (e: any) => {
-        setUser({
-            ...user,
+        setAuthor({
+            ...author,
             [e.target.name]: e.target.value
         });
     };
 
     const handleSubmit = (e: any) => {
         e.preventDefault();
-        setUserAtomValue(user);
-        push('/user');
+        setAuthorAtomValue(author);
+        push('/author');
     };
 
     return (
         <>
-            <h1>Edit User</h1>
+            <h1>Edit Author</h1>
             <form onSubmit={handleSubmit} noValidate autoComplete="off">
                 <div className="row mb-4">
                     <div className="col-3">
-                        <TextField name="name" label="Name" variant="outlined" value={user.name} onChange={handleChange}/>
+                        <TextField name="name" label="Name" variant="outlined" value={author.name} onChange={handleChange}/>
                     </div>
                     <div className="col-3">
-                        <TextField name="surname" label="Surname" variant="outlined" value={user.surname} onChange={handleChange}/>
+                        <TextField name="surname" label="Surname" variant="outlined" value={author.surname} onChange={handleChange}/>
                     </div>
                 </div>
                 <div className="row mb-4">
                     <div className="col-3">
-                        <TextField name="age" label="Age" variant="outlined" value={user.age} onChange={handleChange}/>
+                        <TextField name="age" label="Age" variant="outlined" value={author.age} onChange={handleChange}/>
                     </div>
                     <div className="col-3">
-                        <TextField name="job" label="Job" variant="outlined" value={user.job} onChange={handleChange}/>
+                        <TextField name="job" label="Job" variant="outlined" value={author.job} onChange={handleChange}/>
                     </div>
                 </div>
                 <div className="row">

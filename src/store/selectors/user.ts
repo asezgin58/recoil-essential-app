@@ -1,17 +1,19 @@
 import {selector} from "recoil";
-import {userAtom} from "../atoms/user";
+import {userListAtom} from "../atoms/user";
 import {IUser} from "../../pages/User/type";
 
-export const userSelector = selector<IUser>({
-    key: "userSelector",
-    get: ({get}) => get(userAtom),
-    set: ({set}, newValue) => set(userAtom, newValue)
+export const userListSelector = selector<IUser[]>({
+    key: "userListSelector",
+    get: ({get}) => get(userListAtom),
+    set: ({set}, newValue) => set(userListAtom, newValue)
 });
 
-export const userFullNameSelector = selector<string>({
-    key: "userFullNameSelector",
-    get: ({get}) => {
-        const user = get(userAtom);
-        return user.name + ' ' + user.surname;
+export const userListSelectorWithRequest = selector<IUser[]>({
+    key: "userListSelectorWithRequest",
+    get: async () => {
+        const response = await fetch("https://reqres.in/api/users?page=1");
+        const {data} = await response.json();
+        return data;
     },
+    set: ({set}, newValue) => set(userListAtom, newValue)
 });

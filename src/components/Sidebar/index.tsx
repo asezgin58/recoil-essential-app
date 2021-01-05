@@ -13,6 +13,7 @@ const Sidebar: React.FC<ISidebarProps> = () => {
     const items = [
         {title: 'Home', link: '/'},
         {title: 'User', link: '/user'},
+        {title: 'Author', link: '/author'},
     ];
 
     return (

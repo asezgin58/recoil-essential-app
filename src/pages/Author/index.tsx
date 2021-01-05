@@ -1,6 +1,7 @@
 import React from 'react';
 import {Redirect, Route, Switch, useRouteMatch} from "react-router-dom";
-import List from "./List";
+import Detail from "./Detail";
+import Edit from "./Edit";
 
 /**
  * Component File Description
@@ -10,9 +11,10 @@ const Author = () => {
     return (
         <Switch>
             <Route exact path={`${match.url}`}>
-                <Redirect to={`${match.url}/list`}/>
+                <Redirect to={`${match.url}/detail`}/>
             </Route>
-            <Route path={`${match.url}/list`} component={List}/>
+            <Route path={`${match.url}/detail`} component={Detail}/>
+            <Route path={`${match.url}/edit`} component={Edit}/>
         </Switch>
     )
 };
