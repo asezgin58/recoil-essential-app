@@ -12,10 +12,13 @@ const List: React.FC<any> = () => {
     const [userList, setUserList] = useRecoilState<IUser[]>(userListSelector);
 
     useEffect(() => {
-        fetch("https://reqres.in/api/users?per_page=12")
-            .then(result => result.json())
-            .then(resp => setUserList(resp.data));
-    }, [setUserList]);
+        if (!userList.length) {
+            fetch("https://reqres.in/api/users?per_page=12")
+                .then(result => result.json())
+                .then(resp => setUserList(resp.data));
+        }
+        // eslint-disable-next-line
+    }, []);
 
     return (
         <>
@@ -43,8 +46,8 @@ const List: React.FC<any> = () => {
                                         <TableCell>{row.first_name}</TableCell>
                                         <TableCell>{row.last_name}</TableCell>
                                         <TableCell>{row.email}</TableCell>
-                                        <TableCell align="right" style={{width:100}}><Button variant="contained" color="primary">Detail</Button></TableCell>
-                                        <TableCell align="right" style={{width:100}}><Button variant="contained" color="secondary">Delete</Button></TableCell>
+                                        <TableCell align="right" style={{width: 100}}><Button variant="contained" color="primary">Detail</Button></TableCell>
+                                        <TableCell align="right" style={{width: 100}}><Button variant="contained" color="secondary">Delete</Button></TableCell>
                                     </TableRow>
                                 ))}
                             </TableBody>

@@ -1,3 +1,6 @@
+import 'react-app-polyfill/ie11';
+import "core-js/stable";
+import "regenerator-runtime/runtime";
 import React, {Suspense} from 'react';
 import ReactDOM from 'react-dom';
 import './_assets/style/main.scss';
