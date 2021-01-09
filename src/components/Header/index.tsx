@@ -7,7 +7,7 @@ import {useHistory} from "react-router-dom";
  * Component File Description
  */
 const Header: FC<IHeaderProps> = ({
-                                      position = 'static',
+                                      position = 'fixed',
                                       className,
                                       logo,
                                       miniLogo,
@@ -18,7 +18,7 @@ const Header: FC<IHeaderProps> = ({
     let history = useHistory();
     return (
         <>
-            <AppBar position={position || 'static'} className={`header ${className || ''}`}>
+            <AppBar position={position} className={`header ${className || ''}`}>
                 <Toolbar>
                     <div className="title-area">
                         {logo || miniLogo ? (

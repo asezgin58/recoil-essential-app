@@ -1,9 +1,7 @@
 import {atom} from "recoil";
 import {IUser} from "../../pages/User/type";
 
-const initialUserListData: IUser[] = [];
-
-export const userListAtom = atom<any>({
+export const userListAtom = atom<IUser[]>({
     key: 'userListAtom',
-    default: initialUserListData
+    default: []
 });

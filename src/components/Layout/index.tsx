@@ -9,7 +9,6 @@ const Layout: FC<any> = (props: { children: React.ReactNode }) => {
     return (
         <>
             <Header
-                position={"sticky"}
                 logo={'/images/logo.svg'}
                 title={'Recoil Essential App'}
             />
