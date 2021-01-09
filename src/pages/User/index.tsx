@@ -1,11 +1,10 @@
-import React from 'react';
 import {Redirect, Route, Switch, useRouteMatch} from "react-router-dom";
 import List from "./List";
 
 /**
  * Component File Description
  */
-const Author = () => {
+const User = () => {
     const match: any = useRouteMatch();
     return (
         <Switch>
@@ -17,4 +16,4 @@ const Author = () => {
     )
 };
 
-export default Author;
+export default User;

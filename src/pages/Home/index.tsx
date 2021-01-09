@@ -1,11 +1,11 @@
-import React from 'react';
+import {FC} from "react";
 import {useRecoilValue} from "recoil";
 import {authorFullNameSelector} from "../../store/selectors/author";
 
 /**
  * Component File Description
  */
-const Home: React.FC<any> = () => {
+const Home: FC<any> = () => {
     const authorFullName: string = useRecoilValue<string>(authorFullNameSelector);
 
     return (

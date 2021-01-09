@@ -1,4 +1,4 @@
-import React from 'react';
+import {FC} from 'react';
 import {IHeaderProps} from "./type";
 import {AppBar, Toolbar} from "@material-ui/core";
 import {useHistory} from "react-router-dom";
@@ -6,14 +6,14 @@ import {useHistory} from "react-router-dom";
 /**
  * Component File Description
  */
-const Header: React.FC<IHeaderProps> = ({
-                                            position = 'static',
-                                            className,
-                                            logo,
-                                            miniLogo,
-                                            title,
-                                            children
-                                        }) => {
+const Header: FC<IHeaderProps> = ({
+                                      position = 'static',
+                                      className,
+                                      logo,
+                                      miniLogo,
+                                      title,
+                                      children
+                                  }) => {
 
     let history = useHistory();
     return (

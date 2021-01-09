@@ -1,7 +1,6 @@
 import 'react-app-polyfill/ie11';
 import "core-js/stable";
-import "regenerator-runtime/runtime";
-import React, {Suspense} from 'react';
+import { StrictMode, Suspense } from 'react';
 import ReactDOM from 'react-dom';
 import './_assets/style/main.scss';
 import App from './App';
@@ -9,13 +8,13 @@ import reportWebVitals from './reportWebVitals';
 import {RecoilRoot} from 'recoil';
 
 ReactDOM.render(
-    <React.StrictMode>
+    <StrictMode>
         <RecoilRoot>
             <Suspense fallback={""}>
                 <App/>
             </Suspense>
         </RecoilRoot>
-    </React.StrictMode>,
+    </StrictMode>,
     document.getElementById('root')
 );
 

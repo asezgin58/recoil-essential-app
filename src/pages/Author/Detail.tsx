@@ -1,4 +1,4 @@
-import React from 'react';
+import {FC} from "react";
 import {useRecoilValue} from "recoil";
 import {Button} from "@material-ui/core";
 import {useHistory} from "react-router-dom";
@@ -8,7 +8,7 @@ import {authorSelector} from "../../store/selectors/author";
 /**
  * Component File Description
  */
-const Detail: React.FC<any> = () => {
+const Detail: FC<any> = () => {
     const {push} = useHistory();
     const author: IAuthor = useRecoilValue<IAuthor>(authorSelector);
 

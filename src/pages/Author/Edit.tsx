@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import {FC, useState} from 'react';
+import * as React from 'react';
 import {useRecoilState} from "recoil";
 import {Button, TextField} from "@material-ui/core";
 import {useHistory} from "react-router-dom";
@@ -8,7 +9,7 @@ import {authorSelector} from "../../store/selectors/author";
 /**
  * Component File Description
  */
-const Edit: React.FC<any> = () => {
+const Edit: FC<any> = () => {
     const {push, goBack} = useHistory();
     const [authorAtomValue, setAuthorAtomValue] = useRecoilState<IAuthor>(authorSelector);
     const [author, setAuthor] = useState<IAuthor>(authorAtomValue);

@@ -1,4 +1,4 @@
-import React from 'react';
+import {FC} from 'react';
 import {ISidebarProps} from "./type";
 import {Drawer, List, ListItem, ListItemText} from "@material-ui/core";
 import {useHistory} from "react-router-dom";
@@ -6,7 +6,7 @@ import {useHistory} from "react-router-dom";
 /**
  * Component File Description
  */
-const Sidebar: React.FC<ISidebarProps> = () => {
+const Sidebar: FC<ISidebarProps> = () => {
 
     const history = useHistory();
 

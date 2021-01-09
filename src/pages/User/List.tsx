@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import {FC, useEffect} from 'react';
 import {useRecoilState} from "recoil";
 import {userListSelector} from "../../store/selectors/user";
 import {Button, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow} from "@material-ui/core";
@@ -7,7 +7,7 @@ import {IUser} from "./type";
 /**
  * Component File Description
  */
-const List: React.FC<any> = () => {
+const List: FC<any> = () => {
 
     const [userList, setUserList] = useRecoilState<IUser[]>(userListSelector);
 
