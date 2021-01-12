@@ -36,7 +36,7 @@ const List: FC<any> = () => {
                         <Table>
                             <TableHead>
                                 <TableRow>
-                                    <TableCell>Id</TableCell>
+                                    <TableCell>&nbsp;</TableCell>
                                     <TableCell>First Name</TableCell>
                                     <TableCell>Last Name</TableCell>
                                     <TableCell>Email</TableCell>

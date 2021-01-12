@@ -1,6 +1,6 @@
 import {FC} from 'react';
-import Header from "../Header/index";
-import Sidebar from "../Sidebar/index";
+import Header from "./Header";
+import Sidebar from "./Sidebar";
 
 /**
  * Page Layout Description
